@@ -97,7 +97,30 @@ print(sig.parameters)
 for k, v in sig.parameters.items():
     print(k, v)
 
+for k, v in sig.parameters.items():
+    print(dir(v))
 
+for k, v in sig.parameters.items():
+    print(k, type(v))
 
+for k, param in sig.parameters.items():
+    print('Key:', k)
+    print('Name:', param.name)
+    print('Default:', param.default)
+    print('Annotation:', param.annotation)
+    print('Kind:', param.kind)
+    print('-'*20)
 
+for param in sig.parameters.values():
+    print('Name:', param.name)
+    print('Default:', param.default)
+    print('Annotation:', param.annotation)
+    print('Kind:', param.kind)
+    print('-'*20)
 
+help(divmod)
+print(divmod(4,3))
+#print(divmod(x=3, y=4))
+print('='*30)
+for param in inspect.signature(divmod).parameters.values():
+    print(param.kind)
