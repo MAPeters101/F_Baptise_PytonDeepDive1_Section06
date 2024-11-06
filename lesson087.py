@@ -21,6 +21,8 @@ def my_func(a: "mandatory positional",
     """
     i = 10
     j = 20
+    a = i + j
+    return a
 
 
 print(my_func.__doc__)
@@ -49,4 +51,33 @@ print(my_func.__code__.co_name)
 print(my_func.__code__.co_varnames)
 print(my_func.__code__.co_argcount)
 
+print()
+print()
+print('-'*20)
+import inspect
+from inspect import isfunction, ismethod, isroutine
 
+a = 10
+print(isfunction(a))
+print(isfunction(my_func))
+print(ismethod(my_func))
+
+class MyClass:
+    def f(self):
+        pass
+
+print(isfunction(MyClass.f))
+
+my_obj = MyClass()
+print(isfunction(my_obj.f))
+print(ismethod(my_obj.f))
+print(isroutine(my_obj.f))
+print(isroutine(MyClass.f))
+print('='*20)
+
+print(inspect.getsource(my_func))
+print(inspect.getmodule(my_func))
+print(inspect.getmodule(print))
+print()
+import math
+print(inspect.getmodule(math.sin))
