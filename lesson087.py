@@ -1,3 +1,8 @@
+# dummy code
+i = 100
+
+# TODO: Fix this function
+# currently does nothing, but should do ....
 def my_func(a: "mandatory positional",
             b: "optional positional" = 1,
             c=2,
@@ -81,3 +86,18 @@ print(inspect.getmodule(print))
 print()
 import math
 print(inspect.getmodule(math.sin))
+print(inspect.getcomments(my_func))
+print(my_func.__annotations__)
+print(inspect.signature(my_func).return_annotation)
+
+sig = inspect.signature(my_func)
+print(sig)
+print(sig.parameters)
+
+for k, v in sig.parameters.items():
+    print(k, v)
+
+
+
+
+
