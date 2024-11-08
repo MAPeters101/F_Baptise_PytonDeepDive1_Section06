@@ -83,8 +83,58 @@ print()
 
 result = list(zip(range(10000), 'python'))
 print(result)
+print('='*50)
 
 
+l = range(10)
+print(list(l))
+print(list(map(fact, l)))
+print()
 
+results = [fact(n) for n in range(10)]
+print(results)
+print()
+
+results = (fact(n) for n in range(10))
+print(results)
+print('5'*10)
+print()
+for x in results:
+    print(x)
+
+print()
+for x in results:
+    print(x)
+print('-'*20)
+
+results = list((fact(n) for n in range(10)))
+print(results)
+print('5'*10)
+print()
+for x in results:
+    print(x)
+
+print()
+for x in results:
+    print(x)
+print('-+'*20)
+
+l1 = [1, 2, 3, 4, 5, 6]
+l2 = [10, 20, 30, 40]
+print(list(map(lambda x, y: x+y, l1, l2)))
+
+print([x+y for x, y in zip(l1, l2)])
+print()
+
+print(list(filter(lambda x: x%2==0, map(lambda x, y: x+y, l1, l2))))
+print()
+
+print([x+y for x, y in zip(l1, l2) if (x+y)%2==0])
+print()
+
+results = (x+y for x, y in zip(l1, l2) if (x+y)%2==0)
+print(results)
+print(list(results))
+print()
 
 
