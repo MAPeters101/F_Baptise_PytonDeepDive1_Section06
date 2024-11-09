@@ -83,3 +83,24 @@ print()
 
 print(any(s))
 print(any(s2))
+s3 = {False, 0, '', None}
+print(any(s3))
+
+print(reduce(lambda a, b: bool(a) and bool(b), s))
+print(reduce(lambda a, b: bool(a) or bool(b), s3))
+
+l = [5, 8, 6, 10, 9]
+print(5*8*6*10*9)
+print(reduce(lambda a, b: a*b, l))
+print()
+
+l = [1, 2, 3, 4]
+print(5*8*6*10*9)
+print(reduce(lambda a, b: a*b, l))
+print()
+
+print(list(range(5)))
+
+
+
+
