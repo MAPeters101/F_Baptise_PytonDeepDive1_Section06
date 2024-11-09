@@ -100,7 +100,36 @@ print(reduce(lambda a, b: a*b, l))
 print()
 
 print(list(range(5)))
+print(reduce(lambda a, b: a*b, range(1, 5+1)))
+
+def fact(n):
+    return 1 if n < 2 else n * fact(n-1)
+
+print(fact(5))
+
+def fact(n):
+    return reduce(lambda a, b: a*b, range(1, n+1))
+
+print(fact(5))
+print()
 
 
+def _reduce(fn, sequence, initial):
+    result = initial
+    for x in sequence:
+        result = fn(result, x)
+    return result
 
+print(l)
+print(_reduce(lambda a, b: a+b, l, 0))
+print(_reduce(lambda a, b: a+b, l, 100))
+print(_reduce(lambda a, b: a+b, {1, 2, 3, 4}, 0))
+print(_reduce(lambda a, b: a+b, {1, 2, 3, 4}, 100))
+print()
+
+print(reduce(lambda a, b: a+b, l, 0))
+print(reduce(lambda a, b: a+b, l, 100))
+print(reduce(lambda a, b: a+b, {1, 2, 3, 4}, 0))
+print(reduce(lambda a, b: a+b, {1, 2, 3, 4}, 100))
+print()
 
