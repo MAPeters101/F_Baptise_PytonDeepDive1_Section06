@@ -25,3 +25,32 @@ def my_func1(a, b, *args, k1, k2, **kwargs):
     print(a, b, args, k1, k2, kwargs)
 
 my_func1(10, 20, 100, 200, k1='a', k2='b', k3=1000, k4=2000)
+print()
+
+def h(x, *vars, kw, **kwvars):
+    return my_func1(10, x, *vars, k1='a',k2=kw, **kwvars)
+
+h(20, 10, 20, kw='b', k3=1000, k4=2000)
+
+h = partial(my_func1, 10, k1='a')
+
+h(20, 100, 200, k2='b', k3=1000, k4=2000)
+print()
+
+
+def pow(base, exponent):
+    return base ** exponent
+
+sq = partial(pow, 2)
+print(sq(10))
+
+sq = partial(pow, exponent=2)
+print(sq(5))
+
+cu = partial(pow, exponent=3)
+print(cu(5))
+print(cu(base=5))
+
+
+
+
