@@ -50,6 +50,25 @@ print(sq(5))
 cu = partial(pow, exponent=3)
 print(cu(5))
 print(cu(base=5))
+print(cu(5, exponent=2))
+print()
+
+a=2
+sq=partial(pow,exponent=a)
+print(sq(5))
+a=3
+print(sq(5))
+print()
+
+def my_func(a, b):
+    print(a, b)
+
+a = [1, 2]
+f = partial(my_func, a)
+f(100)
+a.append(3)
+print(a)
+f(100)
 
 
 
