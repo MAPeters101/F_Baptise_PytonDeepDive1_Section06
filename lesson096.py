@@ -97,10 +97,42 @@ prop_b = operator.attrgetter(my_var)
 print(prop_b(obj))
 my_var = 'c'
 print(prop_b(obj))
+print()
+print(operator.attrgetter('a', 'b')(obj))
+a, b, test = operator.attrgetter('a', 'b', 'test')(obj)
+print(a)
+print(b)
+print(test)
+test()
+print()
 
 
+f = lambda x: x.a
+print(f(obj))
 
+f = lambda x: x[2]
+x = [1, 2, 3, 4]
+print(f(x))
+print()
 
+f = lambda x: (x[2], x[3])
+x = [1, 2, 3, 4]
+print(f(x))
+print()
 
+a = 5 + 10j
+print(a)
+print(a.real)
+print(a.imag)
+print()
 
+l = [5-10j, 3+3j, 2-100j]
+#print(sorted(l))
+print(sorted(l, key=lambda x: x.real))
+print(sorted(l, key=operator.attrgetter('real')))
+print()
+
+l = [(2, 3, 4), (1, 3, 5), (6,), (4, 100)]
+print(sorted(l, key=lambda x: x[0]))
+print(sorted(l, key=operator.itemgetter(0)))
 
