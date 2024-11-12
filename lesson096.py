@@ -135,4 +135,93 @@ print()
 l = [(2, 3, 4), (1, 3, 5), (6,), (4, 100)]
 print(sorted(l, key=lambda x: x[0]))
 print(sorted(l, key=operator.itemgetter(0)))
+print('+'*80)
+
+class MyClass:
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+        self.c = 30
+
+    def test(self):
+        print('test method running...')
+
+obj = MyClass()
+f = operator.attrgetter('test')
+print(f(obj))
+f(obj)()
+print()
+
+f = operator.methodcaller('test')
+f(obj)
+print('-'*20)
+
+class MyClass:
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def test(self, c):
+        print(self.a, self.b, c)
+
+obj = MyClass()
+print(obj.a)
+print(obj.b)
+#obj.test()
+obj.test(100)
+#operator.methodcaller('test')(obj)
+#print(operator.methodcaller('test')(obj))
+
+operator.methodcaller('test', 100)(obj)
+print(operator.methodcaller('test', 100)(obj))
+print('='*40)
+
+
+class MyClass:
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def test(self, c, d):
+        print(self.a, self.b, c, d)
+
+obj = MyClass()
+print(obj.a)
+print(obj.b)
+#obj.test()
+obj.test(100, 200)
+#operator.methodcaller('test')(obj)
+#print(operator.methodcaller('test')(obj))
+
+operator.methodcaller('test', 100, 250)(obj)
+print(operator.methodcaller('test', 100, 260)(obj))
+print('-'*40)
+
+
+class MyClass:
+    def __init__(self):
+        self.a = 10
+        self.b = 20
+
+    def test(self, c, d, *, e):
+        print(self.a, self.b, c, d, e)
+
+obj = MyClass()
+print(obj.a)
+print(obj.b)
+#obj.test()
+obj.test(100, 200, e=300)
+#operator.methodcaller('test')(obj)
+#print(operator.methodcaller('test')(obj))
+
+operator.methodcaller('test', 100, 250, e=301)(obj)
+print(operator.methodcaller('test', 100, 260, e=302)(obj))
+print('='*40)
+
+f = operator.attrgetter('test')
+print(f(obj))
+#print(f(obj)())
+#print(f(obj)(100, 200))
+print(f(obj)(100, 200, e=300))
+
 
