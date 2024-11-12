@@ -20,6 +20,34 @@ print(operator.is_('abc', 'abc'))
 print()
 print(operator.truth([]))
 print(operator.truth([1]))
+print('='*80)
+
+my_list = [1, 2, 3, 4]
+print(my_list[1])
+print(operator.getitem(my_list, 1))
+print()
+
+my_list[1] = 100
+print(my_list)
+print(operator.getitem(my_list, 1))
+print()
+
+del my_list[3]
+print(my_list)
+print('+'*50)
+
+my_list = [1, 2, 3, 4]
+operator.setitem(my_list, 1, 100)
+print(my_list)
+
+operator.delitem(my_list, 3)
+print(my_list)
+
+print()
+
+
+
+
 
 
 
