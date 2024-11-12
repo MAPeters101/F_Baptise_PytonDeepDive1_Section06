@@ -43,12 +43,29 @@ print(my_list)
 operator.delitem(my_list, 3)
 print(my_list)
 
+print('='*20)
+
+f = operator.itemgetter(2)
+print(f)
+print(type(f))
+#print(f())
+my_list = [1, 2, 3, 4]
+print(f(my_list))
+s = 'python'
+print(f(s))
 print()
 
+f = operator.itemgetter(2, 3)
+print(type(f))
+my_list = [1, 2, 3, 4]
+print(f(my_list))
+print()
 
-
-
-
-
+f = operator.itemgetter(1, 2, 3)
+print(type(f))
+my_list = [1, 2, 3, 4]
+print(f(my_list))
+print(f('python'))
+print()
 
 
